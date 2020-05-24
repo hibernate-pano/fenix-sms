@@ -15,7 +15,8 @@ public class BioServer {
 
     /**
      * 1. 创建线程池
-     * 2.
+     * 2. 监听6666端口
+     * 3. 使用Telnet发送数据
      */
 
     public static void main(String[] args) throws IOException {
@@ -25,7 +26,7 @@ public class BioServer {
         ServerSocket serverSocket = new ServerSocket(6666);
         System.out.println("服务端启动啦! ");
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i <  5; i++) {
             Socket clientSocket = serverSocket.accept();
             System.out.println("客户端启动! ");
             service.execute(
