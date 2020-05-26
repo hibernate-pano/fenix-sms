@@ -26,25 +26,21 @@ public class BioServer {
         ServerSocket serverSocket = new ServerSocket(6666);
         System.out.println("服务端启动啦! ");
 
-        for (int i = 0; i <  5; i++) {
+        for (int i = 0; i < 5; i++) {
             Socket clientSocket = serverSocket.accept();
             System.out.println("客户端启动! ");
             service.execute(
-                    new Runnable() {
-                        @Override
-                        public void run() {
-                            clientHandler(clientSocket);
-                        }
-                    });
+                    () -> clientHandler(clientSocket));
         }
         service.shutdown();
     }
+
 
     /**
      * 编写一个handler方法，和客户端通讯
      */
     public static void clientHandler(Socket clientSocket) {
-        System.out.println("线程信息 =" + Thread.currentThread().getId() + Thread.currentThread().getName());
+        System.out.println("线程信息 =" + Thread.currentThread().getId() + "------" + Thread.currentThread().getName());
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
