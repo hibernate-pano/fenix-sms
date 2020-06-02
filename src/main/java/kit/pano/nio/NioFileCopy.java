@@ -24,9 +24,9 @@ public class NioFileCopy {
         String fileOut2 = "/Users/pano/Pictures/out2.jpg";
         String fileOut3 = "/Users/pano/Pictures/out3.jpg";
         String fileOut4 = "/Users/pano/Pictures/out4.jpg";
-//        copyFileThroughStream(fileIn, fileOut1);
-//        copyFileThroughFileChannel(fileIn, fileOut2);
-//        copyFileThroughFileChannelAndBuffer(fileIn, fileOut3);
+        copyFileThroughStream(fileIn, fileOut1);
+        copyFileThroughFileChannel(fileIn, fileOut2);
+        copyFileThroughFileChannelAndBuffer(fileIn, fileOut3);
         copyFileThroughAddressMap(fileIn, fileOut4);
     }
 
