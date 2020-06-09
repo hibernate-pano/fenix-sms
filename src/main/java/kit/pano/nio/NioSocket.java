@@ -23,6 +23,7 @@ public class NioSocket {
         //一直执行
         while (true) {
             Thread.sleep(1000);
+            //此处存在资源浪费，因为需要不停的去accept
             SocketChannel client = server.accept();
             System.out.println(System.currentTimeMillis());
             if (Objects.isNull(client)) {
@@ -50,6 +51,5 @@ public class NioSocket {
                 }
             }
         }
-
     }
 }

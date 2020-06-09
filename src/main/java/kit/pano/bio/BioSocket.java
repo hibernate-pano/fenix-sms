@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
 /**
  * @author pano
  */
-public class BioServer {
+public class BioSocket {
 
     /**
      * 1. 创建线程池
